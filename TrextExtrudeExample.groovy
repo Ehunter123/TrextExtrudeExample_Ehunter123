@@ -1,12 +1,17 @@
-import eu.mihosoft.vrl.v3d.CSG
 
-println javafx.scene.text.Font.getFontNames() 
+CSG text = CSG.text("Ella",5)
 
-// To use the default Font is Arial at 30 point
-CSG text = CSG.text("My Text",5)
+import eu.mihosoft.vrl.v3d.*;
+import javafx.scene.text.Font;
 
-// Explicitly set the font name and the size
-CSG text2 = CSG.text("Other Font",5.0, 30.0, "FreeSerif")
-			.movey(40)
+double width=30
+double depth=70
+double height=3
 
-return [text,text2]
+println "Width is "+width
+println "Height is "+height
+println "depth is "+depth
+
+CSG nameTagBase = new Cube(width,depth,height).toCSG()
+
+return [nameTagBase,text]
